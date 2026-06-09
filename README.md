@@ -35,7 +35,7 @@ Each generated sample follows the standard instruction-tuning format:
 
 ```bash
 git clone https://github.com/MohammadHeydari/FarsiSyntheticData
-cd PersianSyntheticData
+cd FarsiSyntheticData
 ```
 
 **2. Create a virtual environment and install dependencies**
@@ -50,17 +50,13 @@ pip install -r requirements.txt
 
 **3. Configure your API key**
 
-Copy the sample env file and add your API key:
-
-```bash
-cp .env.sample .env
-```
+Create a `.env` file in the project root:
 
 ```env
-AvvalAI_API_KEY=your_api_key_here
+AVALAI_API_KEY=your_api_key_here
 ```
 
-This project uses the [GapGPT API](https://gapgpt.app/platform-v2/docs/quickstart), which is compatible with the OpenAI SDK.
+This project uses the [AvvalAI API](https://docs.avalai.ir), which is compatible with the OpenAI SDK.
 
 ## Usage
 
@@ -89,7 +85,7 @@ All settings are in the `CONFIG` dictionary inside `generator.py`:
 
 | Parameter | Default | Description |
 |---|---|---|
-| `model` | `gapgpt-qwen-3.5` | LLM model to use |
+| `model` | `qwen3.6-flash` | LLM model to use |
 | `pairs_per_call` | `3` | Pairs generated per API call |
 | `calls_per_subtopic` | `2` | API calls per subtopic |
 | `delay_between_calls` | `0.3` | Seconds between calls |
@@ -123,3 +119,7 @@ With default settings the pipeline generates approximately **900 instruction-res
 - Sports
 - Science & Nature
 - Society & Philosophy
+
+## License
+
+Apache 2.0

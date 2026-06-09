@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 **3. Configure your API key**
 
-Copy the sample env file and add your key:
+Copy the sample env file and add your API key:
 
 ```bash
 cp .env.sample .env

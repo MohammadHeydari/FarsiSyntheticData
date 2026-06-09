@@ -5,8 +5,8 @@ import os
 load_dotenv()
 
 client = OpenAI(
-    api_key=os.getenv("GAPGPT_API_KEY"),
-    base_url="https://api.gapgpt.app/v1"
+    api_key=os.getenv("AvvalAI_API_KEY"),
+    base_url="https://api.avalai.ir/v1"
 )
 
 response = client.chat.completions.create(

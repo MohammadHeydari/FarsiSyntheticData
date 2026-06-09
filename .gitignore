@@ -1,0 +1,16 @@
+# Environment & secrets
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+
+# IDE
+.idea/
+
+# Test files
+conn_test.py

@@ -5,12 +5,12 @@ import os
 load_dotenv()
 
 client = OpenAI(
-    api_key=os.getenv("AvvalAI_API_KEY"), # you can change llm service provider
+    api_key=os.getenv("AVALAI_API_KEY"), # you can change llm service provider
     base_url="https://api.avalai.ir/v1"
 )
 
 response = client.chat.completions.create(
-    model="gapgpt-qwen-3.5", # choose your desired llm model
+    model="qwen3.5-27b", # choose your desired llm model
     messages=[
         {"role": "user", "content": "سلام رفیق، یه جمله به زبان شیرین پارسی برام بنویس."}
     ]

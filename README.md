@@ -57,7 +57,7 @@ cp .env.sample .env
 ```
 
 ```env
-GAPGPT_API_KEY=your_api_key_here
+AvvalAI_API_KEY=your_api_key_here
 ```
 
 This project uses the [GapGPT API](https://gapgpt.app/platform-v2/docs/quickstart), which is compatible with the OpenAI SDK.

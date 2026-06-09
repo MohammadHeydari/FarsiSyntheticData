@@ -16,7 +16,7 @@ from prompts import SYSTEM_PROMPT, MULTI_PAIR_GENERATION_PROMPT
 load_dotenv()
 
 client = OpenAI(
-    api_key=os.getenv("AvvalAI_API_KEY"),
+    api_key=os.getenv("AvvalAI_API_KEY"), # # you can change llm service provider
     base_url="https://api.avalai.ir/v1"
 )
 

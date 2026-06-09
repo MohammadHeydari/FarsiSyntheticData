@@ -10,7 +10,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gapgpt-qwen-3.5",
+    model="gapgpt-qwen-3.5", # choose your desired llm model
     messages=[
         {"role": "user", "content": "سلام رفیق، یه جمله به زبان شیرین پارسی برام بنویس."}
     ]

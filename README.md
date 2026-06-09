@@ -4,7 +4,7 @@ Generating high-quality Farsi instruction-following synthetic datasets using LLM
 
 ## Overview
 
-This project provides a pipeline for generating diverse, realistic Persian instruction-response pairs across a wide range of topics. The output is structured as JSONL files suitable for fine-tuning language models.
+This project provides a pipeline for generating diverse, realistic Farsi instruction-response pairs across a wide range of topics. The output is structured as JSONL files suitable for fine-tuning language models.
 
 Each generated sample follows the standard instruction-tuning format:
 
@@ -34,7 +34,7 @@ Each generated sample follows the standard instruction-tuning format:
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/PersianSyntheticData.git
+git clone https://github.com/MohammadHeydari/FarsiSyntheticData
 cd PersianSyntheticData
 ```
 

@@ -12,7 +12,7 @@ client = OpenAI(
 response = client.chat.completions.create(
     model="gapgpt-qwen-3.5",
     messages=[
-        {"role": "user", "content": "سلام، یه جمله به زبان شیرین پارسی برام بنویس."}
+        {"role": "user", "content": "سلام رفیق، یه جمله به زبان شیرین پارسی برام بنویس."}
     ]
 )
 

@@ -10,7 +10,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="qwen3.5-27b", # choose your desired llm model
+    model="gpt-4.1-mini", # choose your desired llm model
     messages=[
         {"role": "user", "content": "سلام رفیق، یه جمله به زبان شیرین پارسی برام بنویس."}
     ]

@@ -85,7 +85,7 @@ All settings are in the `CONFIG` dictionary inside `generator.py`:
 
 | Parameter | Default | Description |
 |---|---|---|
-| `model` | `qwen3.6-flash` | LLM model to use |
+| `model` | `gpt-4.1-mini` | LLM model to use |
 | `pairs_per_call` | `3` | Pairs generated per API call |
 | `calls_per_subtopic` | `2` | API calls per subtopic |
 | `delay_between_calls` | `0.3` | Seconds between calls |

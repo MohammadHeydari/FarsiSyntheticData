@@ -21,7 +21,7 @@ client = OpenAI(
 )
 
 CONFIG = {
-    "model": "qwen3.6-flash",
+    "model": "gpt-4.1-mini",
     "pairs_per_call": 3,
     "calls_per_subtopic": 2,
     "delay_between_calls": 0.3,

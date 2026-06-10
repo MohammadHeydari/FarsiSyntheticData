@@ -25,6 +25,7 @@ Each generated sample follows the standard instruction-tuning format:
 ├── topic_tree.json       # Topic hierarchy (10 domains, 150 subtopics)
 ├── prompts.py            # Prompt templates for the LLM
 ├── generator.py          # Main data generation pipeline
+├── dedup.py              # Deduplication script
 ├── output/               # Generated JSONL datasets (one file per domain)
 └── requirements.txt
 ```
@@ -79,6 +80,14 @@ run(max_domains=2)
 run(domains=["فناوری و دیجیتال", "سلامت و پزشکی"])
 ```
 
+**Deduplicate after generation:**
+
+```bash
+python dedup.py
+```
+
+This removes near-duplicate instructions using similarity matching (default threshold: 0.75). Run this once after generation is complete.
+
 ## Configuration
 
 All settings are in the `CONFIG` dictionary inside `generator.py`:
@@ -90,6 +99,12 @@ All settings are in the `CONFIG` dictionary inside `generator.py`:
 | `calls_per_subtopic` | `2` | API calls per subtopic |
 | `delay_between_calls` | `0.3` | Seconds between calls |
 | `max_tokens` | `1500` | Max tokens per response |
+
+The deduplication threshold can be adjusted in `dedup.py`:
+
+```python
+run(threshold=0.75)  # lower = stricter
+```
 
 ## Output
 
@@ -103,7 +118,7 @@ output/
 └── ...
 ```
 
-With default settings the pipeline generates approximately **900 instruction-response pairs** across **10 domain files** in roughly **90 minutes**.
+With default settings the pipeline generates approximately **900 instruction-response pairs** across **10 domain files** in roughly **90 minutes**. After deduplication, expect around **10% reduction** in duplicates.
 
 ## Topic Coverage
 

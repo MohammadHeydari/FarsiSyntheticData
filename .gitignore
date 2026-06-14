@@ -9,6 +9,8 @@ __pycache__/
 *.egg-info/
 
 
+output/
+
 # IDE
 .idea/
 

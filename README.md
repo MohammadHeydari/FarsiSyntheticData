@@ -11,7 +11,7 @@ A pipeline for generating high-quality Farsi instruction-following datasets usin
 | Total pairs | ~4,000 |
 | Domains | 51 |
 | Subtopics | ~350 |
-| Generation models | qwen3.6-flash + gpt-4.1-nano |
+| Generation models | gpt-4.1-mini + gpt-4.1-nano |
 | Fine-tuning method | QLoRA (Unsloth) |
 | Base model | Qwen2.5-3B-Instruct |
 
@@ -103,13 +103,13 @@ This project uses the [AvvalAI API](https://docs.avalai.ir), compatible with the
 
 All settings are in the `CONFIG` dictionary inside `generator.py`:
 
-| Parameter | Default | Description |
-|---|---|---|
-| `model` | `qwen3.6-flash` | LLM model for generation |
-| `pairs_per_call` | `3` | Pairs generated per API call |
-| `calls_per_subtopic` | `2` | API calls per subtopic |
-| `delay_between_calls` | `0.3` | Seconds between calls |
-| `max_tokens` | `1500` | Max tokens per response |
+| Parameter | Default           | Description |
+|---|-------------------|---|
+| `model` | `gpt-4.1-mini + gpt-4.1-nano` | LLM model for generation |
+| `pairs_per_call` | `3`               | Pairs generated per API call |
+| `calls_per_subtopic` | `2`               | API calls per subtopic |
+| `delay_between_calls` | `0.3`             | Seconds between calls |
+| `max_tokens` | `1500`            | Max tokens per response |
 
 ## Quality Pipeline
 
@@ -155,3 +155,42 @@ No overfitting observed — validation loss decreased consistently throughout tr
 ## License
 
 Apache 2.0
+
+## Benchmark — Base vs Fine-tuned
+
+Comparison between `Qwen2.5-0.5B-Instruct` (base) and the fine-tuned model on sample Farsi questions:
+
+---
+
+**Q1: تفاوت SSD و HDD چیه؟**
+
+| | Response |
+|---|---|
+| **Base** | التفاوت بين SSD و HDD... *(responded in Arabic)* |
+| **Fine-tuned** | SSD (Solid State Drive) و HDD (Hard Disk Drive) هر دو نوع ابزارهای ذخیره‌سازی داده هستند، اما تفاوت‌های مهمی دارند... |
+
+---
+
+**Q2: چطور می‌تونم استرس رو کاهش بدم؟**
+
+| | Response |
+|---|---|
+| **Base** | برای گذاشتار (کاهش) از چند سطر یا چه دلخواه... *(incoherent, repetitive)* |
+| **Fine-tuned** | برای کاهش استرس، ابتدا باید نوع استرس خود را شناسایی کنید؛ مثلاً استرس عملیاتی یا فردی. سپس، تمرینات روان‌شناسی مثل تمرینات روحی... |
+
+---
+
+**Q3: هوش مصنوعی چیه و چطور کار می‌کنه؟**
+
+| | Response |
+|---|---|
+| **Base** | اوش مصنوعی است. این گونه نام یا نمایش دستورات... *(incomplete, incoherent)* |
+| **Fine-tuned** | هوش مصنوعی (AI) به روش‌هایی اشاره داره که ماشین‌ها و سیستم‌های کامپیوتری با استفاده از داده‌ها و الگوریتم‌های خاص، تصمیم‌گیری و عملیات را انجام می‌دهن... |
+
+---
+
+**Key observations:**
+- Base model responded in Arabic on Farsi questions
+- Base model produced incoherent and repetitive outputs
+- Fine-tuned model consistently responds in fluent Farsi
+- Fine-tuned model follows the instruction-response structure correctly

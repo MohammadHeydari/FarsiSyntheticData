@@ -139,8 +139,9 @@ Fine-tuned on `Qwen2.5-3B-Instruct` using QLoRA via Unsloth on Google Colab T4:
 | 700 | 0.982 | 1.061 |
 | 714 | 0.995 | 1.060 |
 
-No overfitting observed — validation loss decreased consistently throughout training.
+![](images/loss.png)
 
+Training and validation loss over 714 steps (3 epochs) of QLoRA fine-tuning on Qwen2.5-3B-Instruct using the Persian Synthetic Instruct dataset. Both losses decrease consistently with no signs of overfitting.
 ## Topic Coverage
 
 51 domains including:

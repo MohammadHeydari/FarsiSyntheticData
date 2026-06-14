@@ -42,8 +42,6 @@ Each generated sample follows the standard instruction-tuning format:
 ├── generator.py           # Main data generation pipeline
 ├── dedup.py               # Deduplication script
 ├── quality_scorer.py      # Quality evaluation using a second LLM
-├── finetune.py            # Local fine-tuning script (QLoRA)
-├── benchmark.py           # Before/after comparison script
 ├── persian_finetune_colab.ipynb  # Google Colab notebook (recommended)
 ├── output/                # Generated JSONL datasets (one file per domain)
 └── requirements.txt

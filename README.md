@@ -2,6 +2,8 @@
 
 A pipeline for generating high-quality Farsi instruction-following datasets using LLMs, with built-in deduplication, quality scoring, and fine-tuning support.
 
+![](images/img.png)
+
 ## Results
 
 | | Value |

@@ -10,9 +10,7 @@ from tqdm import tqdm
 
 from prompts import SYSTEM_PROMPT, MULTI_PAIR_GENERATION_PROMPT
 
-# -------------------------------------------------------
 # Config
-# -------------------------------------------------------
 load_dotenv()
 
 client = OpenAI(
